@@ -1,8 +1,14 @@
-pandoc -V geometry:margin=1in --latex-engine=xelatex --toc -o docker-combined.pdf docker-combined.md
+# to convert from md to pdf
 
+pandoc\
+-V geometry:margin=1in\
+--latex-engine=xelatex\
+--toc\
+-o docker-combined.pdf\
+https://github.com/cloudandbigdatalab/papers/raw/master/docker-combined.md
 
-| \# | Action | Detail | Time (min) |
-|----|--------|--------|------------|
-| 1 | Setting Up Kubernetes | To begin, users will be shown the steps necessary to install Kubernetes on a Chameleon Bare Metal Server. | 5 |
-| 2 | Simple Uses of Kubernetes | Here, users will be demonstrated the several different uses of Kubernetes ranging from simple deployments to creating Services to run a web service. | 5 |
-| 2 | Using Setup Files With Kubernetes | Finally, we will demonstrate how to create files that will setup an application for us to build up and tear down at will. | 5 |
+# to convert from md to docx
+
+pandoc -o docker-combined.docx\
+--toc\
+https://github.com/cloudandbigdatalab/papers/raw/master/docker-combined.md
