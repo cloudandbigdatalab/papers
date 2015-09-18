@@ -71,7 +71,7 @@ Docker can be used to quickly launch into a particular Linux distro environment.
 A common workflow with containers is performing some operation or conversion on an input file. For example this document is written in markdown and needs to be converted to pdf. For this we have a container with Pandoc installed. The command to use it is:
 
 ```
-docker run --rm -it -v $(pwd):/working cloudandbigdatalab/pandoc \
+sudo docker run --rm -it -v $(pwd):/working cloudandbigdatalab/pandoc \
 pandoc \
 -V geometry:margin=1in \
 --latex-engine=xelatex \
