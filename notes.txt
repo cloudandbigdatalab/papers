@@ -1,14 +1,19 @@
 # to convert from md to pdf
 
-pandoc\
--V geometry:margin=1in\
---latex-engine=xelatex\
---toc\
--o docker-combined.pdf\
+sudo docker run --rm -it -v $(pwd):/working cloudandbigdatalab/pandoc \
+pandoc \
+-V geometry:margin=1in \
+--latex-engine=xelatex \
+--toc \
+-f markdown_github \
+-o /working/docker-combined.pdf \
 https://github.com/cloudandbigdatalab/papers/raw/master/docker-combined.md
 
 # to convert from md to docx
 
-pandoc -o docker-combined.docx\
---toc\
+sudo docker run --rm -it -v $(pwd):/working cloudandbigdatalab/pandoc \
+pandoc \
+--toc \
+-f markdown_github \
+-o /working/docker-combined.docx \
 https://github.com/cloudandbigdatalab/papers/raw/master/docker-combined.md
